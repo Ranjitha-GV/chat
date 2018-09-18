@@ -1,0 +1,26 @@
+#sty {
+    background-image:url("/home/d/Desktop/chatApp/index.jpeg");
+    color:black ;
+    font-size: 1.1em;
+    font: italic 20px/15px Georgia, serif;
+    text-align: center;
+    padding: 10px;
+}
+#st {
+    background-image:url("/home/d/Desktop/chatApp/index.jpeg");
+    color:black ;
+    font-size: 1.1em;
+    font: italic 25px/15px Georgia, serif;
+    text-align: center;
+}
+h1 {
+    color: black;
+    font: italic bold 40px/30px Georgia, serif;
+    text-align: center;
+    
+}
+img
+{
+    padding: 25px;
+}
+  
