@@ -1,0 +1,22 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ranjitha-GV/chat.git"
+  },
+  "author": "ranjitha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ranjitha-GV/chat/issues"
+  },
+  "homepage": "https://github.com/Ranjitha-GV/chat#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
