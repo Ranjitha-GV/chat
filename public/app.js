@@ -1,13 +1,26 @@
-var scotchApp = angular.module('myApp', ['ngRoute']);
+var routerApp = angular.module('myApp', ['ui.router']);
 
-scotchApp.config(function($routeProvider) {
-    $routeProvider
-    .when('/', {
-            templateUrl : 'template/registration.html'
-        })
+routerApp.config(function($stateProvider, $urlRouterProvider) {
 
-        // route for the about page
-        .when('/success', {
-            templateUrl : 'template/success.html'
+    $urlRouterProvider.otherwise('/registration');
+
+    $stateProvider
+
+       .state('registration', {
+            url: '/registration',
+            templateUrl: 'template/registration.html'
         })
-    });
+        .state('success', {
+            url: '/success',
+            templateUrl: 'template/success.html'
+        })    
+        .state('login', {
+            url: '/login',
+            templateUrl: 'template/login.html'
+        })  
+        .state('homePage', {
+            url: '/homePage',
+            templateUrl: 'template/homePage.html'
+        })    
+});
+
