@@ -6,16 +6,25 @@
         <img src="asset/message.jpeg" alt="Chat Mate" width="100" height="100" align = "bottom"> 
 </div>
         <h3>Register into unlimited fun with ChatMate</h3>
-        <form>
-            First Name: <input type = "text"  ng-model = "user.fname" required minlength="3"><br><br>
-            Last Name: <input type = "text"  ng-model = "user.lname"><br><br>
-            Username: <input type = "text" ng-model = "user.loginId" required><br><br>
+        <form name="SaveForm">
+                <div>
+            First Name: <input type = "text"  name = "fname" ng-model = "user.fname" maxlength="60" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" placeholder = "firstname" required>
+            <span style = "color: red" ng-show="SaveForm.fname.$dirty && SaveForm.fname.$invalid" class = "ng-hide">Invalid First Name</span>  <br><br>
+                </div>
+                <div>
+            Last Name: <input type = "text" name = "lname" ng-model = "user.lname" maxlength="60" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" placeholder = "lastname" required>
+            <span ng-show="SaveForm.lname.$dirty && SaveForm.lname.$invalid" class="ng-hide">Invalid Last Name</span> <br><br>
+                </div>
+            Username: <input type = "text" ng-model = "user.loginId" placeholder = "abc_19" required><br><br>
             Email_ID: <input type = "email" ng-model = "user.email" placeholder = "abc@hotmail.com" required><br><br>
-            Phone: &emsp;<input type = "number" ng-model = "user.phonenumber" required><br><br>
-            Password: <input type = "password" ng-model = "user.password" required><br><br>
+            <div>
+            Phone: &nbsp;&nbsp;&emsp;<input type = "number" name = "phonenumber" ng-model = "user.phonenumber" placeholder = "9378948393" maxlength="10" ng-pattern="/^[7-9][0-9]{9}$/" required>
+            <span ng-show="SaveForm.phonenumber.$dirty && SaveForm.phonenumber.$invalid" class="ng-hide">Please Enter Valid  Mobile Number</span><br><br>
+                </div>
+            Password: <input type = "password" ng-model = "user.password" placeholder = "***********" minlength = "5" required><br><br>
            <div id="st"> <a href="#!/login">Already registered.... Login</a> </div>
           <div class = "but"> <button type = "Submit" value="Submit" ng-click = "register()" style="padding:10px;color:whitesmoke;background-color:rgb(0, 1, 2); font-size:20px;font-style: italic">Register</button>   
-       <button type = "reset" name="reset" style="padding:10px;color:whitesmoke;background-color:rgb(0, 1, 2); font-size:20px;font-style: italic">Reset</button> </div>    
+       <button type = "reset" value = "reset" name="reset" ng-click= "funcSave()" style="padding:10px;color:whitesmoke;background-color:rgb(0, 1, 2); font-size:20px;font-style: italic">Reset</button> </div>    
             
         </form>
 <div>

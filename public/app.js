@@ -21,6 +21,11 @@ chatApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'template/homePage.html',
             controller: 'homeCtrl'
         })    
+        .state('validationController', {
+            url: '/validationController',
+            templateUrl: 'template/registration.html',
+            controller: 'ctrl'
+        })    
 });
 
 

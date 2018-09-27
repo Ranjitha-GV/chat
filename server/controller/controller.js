@@ -13,6 +13,10 @@ var config = require('../config/auth.js');
 
  exports.login=function(req,res)
  {
+    // req.checkBody(loginId,"Please enter alphabets").isLength()
+    // req.checkBody(password,"Please enter alphabets").isLength();
+    // check('loginId').isLength({min:3}),
+    // check('password').isLength({min:5})
     var userModel = require('../model/users.js');
      console.log("called");
     var response={};

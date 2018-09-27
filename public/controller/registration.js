@@ -1,9 +1,9 @@
 chatApp.controller('registerCtrl', function($scope, $http) {
     // console.log('register');
     $scope.user = {
-        'firstname': '',
-        'lastname': '',
-        'username':'',
+        'fname': '',
+        'lname': '',
+        'loginId':'',
         'phonenumber': '',
         'email': '',
         'password': ''
@@ -22,17 +22,19 @@ chatApp.controller('registerCtrl', function($scope, $http) {
         if(response.data.error==true){
             console.log("successful");
             $scope.message="Registration Successful";
-            $state.go('#!/login');
+            $state.go('login');
         }
         else if(response.data.error==false){
             console.log(response.data.error)
             $scope.message = response.data.message;
         }
     },
-    function(response)
+    function(error)
     {
-        console.log(response);
-        $scope.message = response.data.message;
+        console.log(error);
+        $scope.message = error.data.message;
     })
   }
+
 });
+

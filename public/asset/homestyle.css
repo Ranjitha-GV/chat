@@ -1,0 +1,73 @@
+.container{
+    width: 1260px;
+    background-color:lightblue;
+}
+.header{
+    width: 1260px;
+    height: 100px;
+    padding-top:15px;
+    background-color:rgb(184, 230, 173);
+}
+.logo{
+    position:absolute;
+    top: 25px;
+    float: left;
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    background-color:gray;
+}
+.logout{
+    
+    float: right;
+    background-color:gray;
+}
+.area{
+    width: 1260px;
+    height: 500px;
+    background-color:rgb(90, 99, 90);
+}
+.leftarea{
+    float: left;
+    width: 420px;
+    height: 500px;
+    background-color:black;
+}
+.rightarea{
+    float: right;
+    width: 820px;
+    height: 500px;
+    background-color:black;
+}
+.users{
+    
+    width: 420px;
+    height: 500px;
+    background-color:gray;
+}
+.messagebox{
+    
+    width: 820px;
+    height: 400px;
+    background-color:gray;
+}
+.typing{
+    
+    width: 820px;
+    height: 100px;
+    background-color:lightblue;
+}
+.typingmessage{
+    float: left;
+    width: 720px;
+    height: 100px;
+    background-color:gray;
+}
+ 
+.send{
+    
+    float: right;
+    width: 90px;
+    height: 100px;
+    background-color:gray;
+} 

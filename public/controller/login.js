@@ -22,10 +22,10 @@ chatApp.controller('loginCtrl',function($scope, $http,$state){
             $scope.message="login Unsuccessful"
        
      }
-    }, function(err)
+    }, function(response)
     {
-        console.log(err);
-        $scope.content = "something went wrong";
+        console.log(response);
+        $scope.message = response.data.message;
     })
     }
     

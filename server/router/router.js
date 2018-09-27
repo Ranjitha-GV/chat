@@ -44,7 +44,7 @@ db.password = require('crypto')
     .update(req.body.password)
     .digest('base64');
     console.log(req.body);
-    usermod.find({ "email": db.email }, function (err, data) {
+    usermod.find({ "email": db.email}, function (err, data) {
         if (data.length > 0) {
             response = {
                 "error": false,
