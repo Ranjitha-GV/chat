@@ -16,6 +16,10 @@ chatApp.controller('loginCtrl',function($scope, $http,$state){
         if(response.data.Success==true){
             console.log(response.data.message);
             $scope.message="login Successful";
+            var token = response.data.token;
+            localStorage.setItem("token",token);
+            var id = response.data.userid;
+            localStorage.setItem("userid",id);
             $state.go('homePage');
         }
         else if(response.data.Success==false){

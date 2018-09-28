@@ -8,7 +8,7 @@ const { check, validationResult } = require('express-validator/check');
 
 var usermod = require('../model/users.js');
 // var validator=require('express-validator');
-var db = new usermod();
+// var db = new usermod();
 var response = {};  
 
 router.use('/auth', auth);
@@ -32,6 +32,7 @@ router.post('/register',
       return res.status(422).json({ errors: errors.array() });
     }
 
+var db = new usermod();
 db.fname = req.body.fname;
 db.lname = req.body.lname;
 db.loginId = req.body.loginId;

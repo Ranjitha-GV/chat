@@ -36,5 +36,10 @@ chatApp.controller('registerCtrl', function($scope, $http) {
     })
   }
 
+  $scope.reset = function ()
+  {
+    $scope.message = "";
+  }
+
 });
 

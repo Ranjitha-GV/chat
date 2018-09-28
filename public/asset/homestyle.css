@@ -1,73 +1,129 @@
+.header
+{
+    background-color: grey;
+    height: 100px;
+    width: 1280px;
+    /* margin-right: 1000px; */
+    margin: 0px 100px 0px 0px;
+
+   
+}
+.back
+{
+    background-image: url("/asset/index.jpeg");
+}
+.but2
+{
+    background-image: url("/asset/index.jpeg");
+    color:black ;
+    font-size: 1.1em;
+    font: italic 20px/15px Georgia, serif;
+    text-align: right;
+    padding: 10px;
+    /* padding-bottom: 100px; */
+    
+}
+.log
+{
+    padding:10px;
+    color:whitesmoke; 
+    background-image:url("/asset/index.jpeg");
+    font-size:150px;
+    font-style: italic;
+     width: 100px;
+     float: right;
+}
+
+.name
+{
+    float: center;
+    padding-top: 15px;
+    color: white;
+
+}
+
 .container{
+    height:100px;
     width: 1260px;
-    background-color:lightblue;
+    background-image:url("/asset/index.jpeg");
 }
-.header{
-    width: 1260px;
-    height: 100px;
-    padding-top:15px;
-    background-color:rgb(184, 230, 173);
+.boxed {
+    border: 1px solid rgb(231, 223, 223);
+    /* height: 100px; */
+  }
+
+.boxed1 {
+    border: 1px solid white ;
+    width:1260px;
+    height:500px;
+  }
+
+.boxed2 {
+    border: 1px solid white ;
+    width:400px;
+    height:500px;
+  }
+  .boxed3 {
+      float: left;
+    width:1200px;
+    height:500px;
+  }
+
+  .text
+  {
+      padding-top: 380px;
+      float:bottom;
+      margin-right: 0%;
+      /* width: 150px; */
+
+  }
+
+  .send
+  {
+    padding-bottom: 430px;
+  }
+
+.list
+{
+    float:left;
+    height:410px;
+    width: 300px;
+    padding-left: 0%;
+    background-color: grey;
+    padding:2px;
+    opacity: 0.8;
+    color: black;
+    line-height: 1.6;
+    font-weight: bolder;
+    overflow: scroll;
+    border-style: double;
+    border-color: grey;
+   
+
 }
-.logo{
-    position:absolute;
-    top: 25px;
-    float: left;
-    width: 30px;
-    height: 30px;
-    padding-top: 5px;
-    background-color:gray;
+
+#h4
+{
+  float: left;  
 }
-.logout{
-    
-    float: right;
-    background-color:gray;
+
+.res
+{
+    background-color: grey;
+    float:right;
+    height:380px;
+    width: 847px;
+    opacity: 0.8;
+    border-style: double;
+    border-color: grey;
 }
-.area{
-    width: 1260px;
-    height: 500px;
-    background-color:rgb(90, 99, 90);
+
+#h3
+{
+    float:left;
+    padding-bottom:30px;
 }
-.leftarea{
-    float: left;
-    width: 420px;
-    height: 500px;
-    background-color:black;
+.col
+{
+    color:black;
 }
-.rightarea{
-    float: right;
-    width: 820px;
-    height: 500px;
-    background-color:black;
-}
-.users{
-    
-    width: 420px;
-    height: 500px;
-    background-color:gray;
-}
-.messagebox{
-    
-    width: 820px;
-    height: 400px;
-    background-color:gray;
-}
-.typing{
-    
-    width: 820px;
-    height: 100px;
-    background-color:lightblue;
-}
-.typingmessage{
-    float: left;
-    width: 720px;
-    height: 100px;
-    background-color:gray;
-}
- 
-.send{
-    
-    float: right;
-    width: 90px;
-    height: 100px;
-    background-color:gray;
-} 

@@ -30,6 +30,7 @@ io.sockets.on('connection',function(socket){
 
 connections.splice(connections.indexof(socket),1);
 console.log('Disconnected');
+
 app.listen(4000);
 console.log("Listening to PORT 4000");
 

@@ -115,7 +115,7 @@ var config = require('../config/auth.js');
         userModel.find({"_id":{$ne:userid }},function (err,data) {
             console.log(data);
             for(key in data){
-                    arrList.push(response={username:data[key].loginId,
+                    arrList.push({loginId:data[key].loginId,
                                             userid:data[key]._id});
             }
             if(err)
@@ -123,6 +123,7 @@ var config = require('../config/auth.js');
                     response={ "error":true,
                                 "message":"error retrieving data"
                     }
+                    return res.status(401).send(response);
                 }
                 else{
                     response={

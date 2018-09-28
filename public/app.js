@@ -19,7 +19,7 @@ chatApp.config(function($stateProvider, $urlRouterProvider) {
         .state('homePage', {
             url: '/homePage',
             templateUrl: 'template/homePage.html',
-            controller: 'homeCtrl'
+            controller: 'homecontroller'
         })    
         .state('validationController', {
             url: '/validationController',
