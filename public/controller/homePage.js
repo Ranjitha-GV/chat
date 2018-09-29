@@ -3,6 +3,7 @@ var mytoken = localStorage.getItem("token");
 var id=localStorage.getItem("userid");
 console.log("id is"+id)
    var arr=[];
+   var socket = io.connect('http://localhost:4000');
 $http({
     method: 'GET',
     url: 'auth/users/'+id+'/list',
@@ -20,7 +21,11 @@ $http({
     $scope.logout=function () {
         localStorage.removeItem(token);
         localStorage.removeItem(userid);
-        $location.path('/login')
+        $location.path('/login');
 
     }
 }) 
+// SocketService.emit('toBackEnd', "Hello", { date: new Date() })
+// SocketService.on('message', function(msg) {
+//     $scope.array.push(msg)
+// });

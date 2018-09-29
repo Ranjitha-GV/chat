@@ -80,7 +80,7 @@
 
   .send
   {
-    padding-bottom: 430px;
+    padding-bottom: 400px;
   }
 
 .list
@@ -116,6 +116,7 @@
     opacity: 0.8;
     border-style: double;
     border-color: grey;
+    overflow: scroll;
 }
 
 #h3

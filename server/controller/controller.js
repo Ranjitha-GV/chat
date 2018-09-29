@@ -7,16 +7,12 @@ function encryption(password) {
  }
 //  const { check, validationResult } = require('express-validator/check');
 var jwt = require('jsonwebtoken');
-var bcrypt = require('bcryptjs');
 var config = require('../config/auth.js');
-// var db = new userModel();
 
  exports.login=function(req,res)
  {
     // req.checkBody(loginId,"Please enter alphabets").isLength()
     // req.checkBody(password,"Please enter alphabets").isLength();
-    // check('loginId').isLength({min:3}),
-    // check('password').isLength({min:5})
     var userModel = require('../model/users.js');
      console.log("called");
     var response={};
@@ -62,7 +58,6 @@ var config = require('../config/auth.js');
     var userModel = require('../model/users.js')
     var db = new userModel();
      var response = {};
-    // var mail = req.body.email;
      db.firstname = req.body.firstname;
      db.lastname = req.body.lastname;
      db.username = req.body.username;
