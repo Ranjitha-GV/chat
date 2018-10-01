@@ -128,3 +128,32 @@
 {
     color:black;
 }
+#left{
+    position: relative;
+    background:black;
+    border-radius: .4em;
+    padding: 12px;
+    margin: 10px;
+    width: 58%;
+    height: 60px;
+    font-size: 15px;
+    color: white;
+    float: right;
+}
+#right{
+    position: relative;
+    background: white;
+    border-radius: .4em;
+    padding: 12px;
+    margin: 10px;
+    width: 58%;
+    height: 60px;
+    font-size: 15px;
+    color:black;
+    float: left;
+}
+
+.time
+{
+    float:left;
+}

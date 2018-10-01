@@ -37,7 +37,8 @@ var config = require('../config/auth.js');
                     "Success": true,
                     "message": "login succesfull",
                     "token": token,
-                    "userid":data[0]._id
+                    "userid":data[0]._id,
+                    "username":data[0].loginId
                 }
                 return res.status(200).send(response);
             }
@@ -129,3 +130,50 @@ var config = require('../config/auth.js');
             return res.status(200).send(response);
         })
     }
+exports.addtodb=function (userid,username,message,date) {
+        var userModel = require('../model/users2');
+        var db = new userModel();
+        var response={};
+        db.message=message;
+        db.date=date;
+        db.userid=userid;
+        db.username=username;
+        db.save(function (err) {
+            if (err) {
+                response = {
+                    "error": true,
+                    "message": "error storing data"
+                }
+            }
+            else {
+                response = { "error": false, "message": "succesfully added to database" }
+            }
+        });
+        console.log(response)
+    
+    }
+exports.getmsgs=function(req,res){
+        var userModel = require('../model/users2');
+        var response = {};
+        userModel.find({},function(err,data){
+            if(data){
+                response={
+                    "error":false,
+                    "message":data
+                    
+                }
+                res.status(200).send(response);
+            }
+            else{
+                response={
+                    "error":true,
+                    "message":"something went wrong",
+                    
+                }
+                console.log(err);
+                res.status(401).send(response);
+            }
+           
+        })
+    }
+    

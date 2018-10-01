@@ -20,6 +20,9 @@ chatApp.controller('loginCtrl',function($scope, $http,$state){
             localStorage.setItem("token",token);
             var id = response.data.userid;
             localStorage.setItem("userid",id);
+            var username = response.data.username;
+            console.log(response.data.username);
+            localStorage.setItem("username",username);
             $state.go('homePage');
         }
         else if(response.data.Success==false){

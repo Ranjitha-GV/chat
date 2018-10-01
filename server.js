@@ -1,37 +1,35 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
-//var router = express.Router();
+// var router = express.Router();
 var mongoose = require('mongoose');
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);//--------
+var users=require("/home/administrator/Desktop/chatApp/server/controller/controller.js");
+var router = require('./server/router/router.js');
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ "extended": false }));
 
-
-var router = require('./server/router/router.js')
 app.use('/', router);
 app.use(express.static('./public'));
 
-var server = require('http').createServer(app);
-var io = require('socket.io').listen(server);
-users = [];
-connections = [];
+io.on('connection', function (client) {
+    console.log("system working")
+    client.on('disconnect',function () {
+        console.log("socket disconnected");
+    })
+   
 
-server.listen(3000);
-
-app.get('/',function(req,res){res.sendFile(__dirname,'/index.html');
+client.on('tobackend',function (data) {
+    users.addtodb(data.userid, data.username,data.message,data.date);
+    io.emit('tofrontend',data)
 })
 
-//open connection
-io.sockets.on('connection',function(socket){
-    connections.push(socket);
-    console.log('connected');
 })
 
-connections.splice(connections.indexof(socket),1);
-console.log('Disconnected');
 
-app.listen(4000);
+server.listen(4000);
 console.log("Listening to PORT 4000");
-
-
