@@ -8,8 +8,7 @@
         <h3>Register into unlimited fun with ChatMate</h3>
         <form name="SaveForm">
                 <div>
-            First Name: <input type = "text"  name = "fname" ng-model = "user.fname" maxlength="60" 
-                                ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" placeholder = "firstname" 
+            First Name: <input type = "text"  name = "fname" ng-model = "user.fname" maxlength="60" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" placeholder = "firstname" 
                                 required><br>
                     <span style = "color: red; font-size: 15px; padding-top: 25px" 
                                 ng-show="SaveForm.fname.$dirty && SaveForm.fname.$invalid" 
@@ -25,12 +24,13 @@
                 </div>
             Username: <input type = "text" ng-model = "user.loginId" 
                         placeholder = "username" required><br><br><br>
-            Email_ID: <input type = "email" ng-model = "user.email" maxlength="60" 
-                        ng-pattern="/^[a-zA-Z. ]*[a-zA-Z][7-9][0-9]{9}{1,60}$/" 
+                        <div>
+            Email_ID: <input type = "email" name = "email" ng-model = "user.email" maxlength="60" 
+                        ng-pattern="/^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$/"
                         placeholder = "abc@hotmail.com" required><br>
             <span style = "color: red; font-size: 15px; padding-top: 25px" 
                         ng-show="SaveForm.email.$dirty && SaveForm.email.$invalid" 
-                        class="ng-hide">Invalid Last Name</span> <br><br>
+                        class="ng-hide">Please enter a valid email address</span> <br><br>
                 </div>
             <div>
             Phone: &nbsp;&nbsp;&emsp;<input type = "number" name = "phonenumber"  
@@ -38,7 +38,7 @@
                         ng-pattern="/^[7-9][0-9]{9}$/" required><br>
             <span style = "color: red; font-size: 15px; padding-top: 25px" 
                         ng-show="SaveForm.phonenumber.$dirty && SaveForm.phonenumber.$invalid" 
-                        class="ng-hide">Please Enter Valid  Mobile Number</span><br><br>
+                        class="ng-hide">Please enter valid phone number with 10 digits</span><br><br>
                 </div>
             Password: <input type = "password" ng-model = "user.password" 
                         placeholder = "***********" minlength = "5" required><br><br>

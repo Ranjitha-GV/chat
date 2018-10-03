@@ -176,4 +176,52 @@ exports.getmsgs=function(req,res){
            
         })
     }
+    exports.addtodbp=function (senderId,receiverId,senderName,receiverName,message,date) {
+        var userModel = require('../model/users3');
+        var db = new userModel();
+        var response = {};
+        db.message = message;
+        db.date = date;
+        db.senderId = senderId;
+        db.receiverId = receiverId;
+        db.senderName = senderName;
+        db.receiverName = receiverName;
+        db.save(function (err) {
+            if (err) {
+                response = {
+                    "error": true,
+                    "message": "error storing data"
+                }
+            }
+            else {
+                response = { "error": false, "message": "succesfully added to database" }
+            }
+        });
+        console.log(response)
     
+    } 
+    exports.getmsgsp=function(req,res){
+        var userModel = require('../model/users3');
+        var response = {};
+        userModel.find({},function(err,data){
+            if(data){
+                response=
+                {
+                    "error":false,
+                    "message":data
+                    
+                }
+                res.status(200).send(response);
+            }
+            else{
+                response={
+                    "error":true,
+                    "message":"something went wrong",
+                    
+                }
+                console.log(err);
+                res.status(401).send(response);
+            }
+           
+        })
+    }

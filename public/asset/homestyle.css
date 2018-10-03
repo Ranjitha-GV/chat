@@ -11,6 +11,10 @@
 .back
 {
     background-image: url("/asset/index.jpeg");
+    height: 630px;
+    padding-bottom: 20px;
+    height: fit-content;
+    /* padding-bottom: 30px; */
 }
 .but2
 {
@@ -19,8 +23,8 @@
     font-size: 1.1em;
     font: italic 20px/15px Georgia, serif;
     text-align: right;
-    padding: 10px;
-    /* padding-bottom: 100px; */
+    padding-bottom: 510px;
+    position: relative;
     
 }
 .log
@@ -48,14 +52,16 @@
     background-image:url("/asset/index.jpeg");
 }
 .boxed {
-    border: 1px solid rgb(231, 223, 223);
+    border: 0px solid rgb(231, 223, 223);
+    padding-top: 0%;
     /* height: 100px; */
   }
 
 .boxed1 {
     border: 1px solid white ;
     width:1260px;
-    height:500px;
+    height:0px;
+    padding-top:30px;
   }
 
 .boxed2 {
@@ -73,20 +79,16 @@
   {
       padding-top: 380px;
       float:bottom;
-      margin-right: 0%;
+      padding-right: 48px;
+      /* margin-right: 50%;      */
       /* width: 150px; */
 
-  }
-
-  .send
-  {
-    padding-bottom: 400px;
   }
 
 .list
 {
     float:left;
-    height:410px;
+    height:490px;
     width: 300px;
     padding-left: 0%;
     background-color: grey;
@@ -95,28 +97,30 @@
     color: black;
     line-height: 1.6;
     font-weight: bolder;
-    overflow: scroll;
+    overflow-y: auto;
     border-style: double;
     border-color: grey;
    
 
 }
 
+
 #h4
 {
-  float: left;  
+  float: left;
+  margin-left: 10px;  
 }
 
 .res
 {
     background-color: grey;
     float:right;
-    height:380px;
-    width: 847px;
+    height:460px;
+    width: 901px;
     opacity: 0.8;
     border-style: double;
     border-color: grey;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 #h3
@@ -128,32 +132,50 @@
 {
     color:black;
 }
-#left{
+.left{
     position: relative;
     background:black;
     border-radius: .4em;
     padding: 12px;
     margin: 10px;
-    width: 58%;
+    width: 50%;
     height: 60px;
-    font-size: 15px;
+    font-size: 20px;
     color: white;
-    float: right;
+    float: left;
+    word-wrap: break-word;
 }
-#right{
+.right{
     position: relative;
     background: white;
     border-radius: .4em;
     padding: 12px;
     margin: 10px;
-    width: 58%;
+    width: 50%;
     height: 60px;
-    font-size: 15px;
+    font-size: 20px;
     color:black;
-    float: left;
+    float: right;
+    word-wrap: break-word;
 }
 
 .time
 {
     float:left;
+    font-size: 15px;
+}
+.send
+{
+    float:right;
+    width: 30px;
+    height: 100px;
+    margin-right: 0%;
+}
+.button
+{
+    /* background-color: grey; */
+    color: black;
+     padding: 1px; 
+     width: 235px;
+     margin-left: 0%;
 }

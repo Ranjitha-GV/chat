@@ -1,43 +1,39 @@
 <div class = "back">
     <div class ="but2">
-    
-    <div class="boxed">
-          <center> <h1> Welcome to ChatMate </h1> </center>
-            <div class = "container">
-                    <div>
-                        <div align = "left">
-                                <img src="asset/message.jpeg" alt="Chat Mate" width="100" height="100" > 
-                                <div class = "log">
-                                        <a href='#!/login'><button type = "submit" value = "Submit" ng-click = "home()" style="padding:10px;color:whitesmoke;background-color:rgb(0, 9, 17); font-size:20px;font-style: italic">LogOut</button></a>       
-                           </div> 
+        <img src="asset/message.jpeg" alt="Chat Mate" width="90" height="85" align = "left">
+                    <div class = "log">
+                            <a href='#!/login'><button type = "submit" value = "Submit" ng-click = "home()" style="padding:10px;color:whitesmoke;background-color:rgb(0, 9, 17); font-size:15px;font-style: italic">LogOut</button></a>       
+                        </div>  
+                    <center> <h1> Welcome to ChatMate!!! </h1> </center>
+                    <div> 
+                        <div align = "left">                                
                         </div>  
                     </div> 
-                 </div>
-             </div>
-          <div class="boxed1">
-             <h3 id = "h4">Contacts</h3><br><br><br><br>
+              <div class="boxed1">
       <div class = "list">
-          <ul>
-             <li  align = "left" type = "none" ng-repeat = "key in arr">
-               <font color="black"> {{key}} </font>
+          <div>
+            <h3 id = "h4">Connect with..</h3><br><br>
+        </div>
+          <ol>
+             <li align = "left" type = "none" ng-repeat = "key in arr">
+               <div class = "button" ng-click = "move(username)" > <i> {{key}} </i><hr></div> 
             </li>
-        </ul>
+        </ol>
     </div>
         <div class = "res">
-
-        <ul align = "left" ng-repeat = "x in msgArr track by $index"><p  id="left" ng-if = "currUser != x.username">{{x.username}} : 
+          <ul align = "left" ng-repeat = "x in msgArr track by $index"><p  class ="left" ng-if = "currUser != x.username"><strong>{{x.username}}</strong> : 
             <span>{{x.message}}</span><br><br>
-            <span id = "time" > {{x.date | date: 'medium'}}</span></p>
-                <p id="right" ng-if = "currUser == x.username">{{x.username}} : 
+            <span class = "time" > {{x.date | date: 'medium'}}</span></p>
+                <p class ="right" ng-if = "currUser == x.username"><strong>{{x.username}}</strong>: 
                   <span>{{x.message}}</span><br><br>
-                  <span id = "time" >{{x.date | date: 'medium'}}</span></p>
+                  <span class = "time" >{{x.date | date: 'medium'}}</span></p>
                 </div>
             <div class = "text">
-                <textarea rows = "2" cols = "104" placeholder = "Type message" ng-model = "message">  
-                        </textarea>
-            </div>
-            <div class = "send">
-                <button type = "submit" value = "Submit" ng-click = "sendMessage()" style="padding: 3px;color:whitesmoke;background-color:rgb(0, 9, 17); font-size:15px;font-style: italic"> Send </button>
+                <textarea rows = "2" cols = "101" placeholder = "Type message" ng-model = "message">  
+                    </textarea>
+                     <div class = "send">
+                    <button type = "submit" value = "Submit" ng-click = "sendMessage()" style=" width: 78px; padding: 8px;color:whitesmoke;background-color:rgb(0, 9, 17); font-size:15px;font-style: italic"> Send </button>
+                </div>
             </div>
         </div>   
    </div>

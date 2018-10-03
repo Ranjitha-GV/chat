@@ -5,7 +5,7 @@
     font: italic 20px/15px Georgia, serif;
     text-align: center;
     /* padding-top: 20px; */
-    padding-bottom:30px;
+    padding-bottom:300px;
     padding: 30px;
     
 }
@@ -68,6 +68,10 @@ h1 {
         cursor: pointer;
         width: 98%;
         opacity: 0.9;
+    }
+    .homeimg{
+        width:1000;
+         height:70;
     }
       
 

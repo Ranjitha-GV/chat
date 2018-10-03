@@ -1,0 +1,40 @@
+<div class = "back">
+        <div class ="but2">
+            <img src="asset/message.jpeg" alt="Chat Mate" width="90" height="85" align = "left">
+                        <div class = "log">
+                                <a href='#!/login'><button type = "submit" value = "Submit" ng-click = "home()" style="padding:10px;color:whitesmoke;background-color:rgb(0, 9, 17); font-size:15px;font-style: italic">LogOut</button></a>       
+                            </div>  
+                        <center> <h1> Welcome to ChatMate!!! </h1> </center>
+                        <div> 
+                            <div align = "left">                                
+                            </div>  
+                        </div> 
+                  <div class="boxed1">
+          <div class = "list">
+                <h3 id = "h4">Connect with..</h3><br><br>
+              <ol>
+                 <li align = "left" type = "none" ng-repeat = "key in arr">
+                   <div class = "button"> <i> {{key}} </i><hr></div> </font> </div>
+                </li>
+            </ol>
+        </div>
+            <div class = "res">
+              <ul align = "left" ng-repeat = "x in msgArr track by $index"><p  id="left" ng-if = "currUser != x.username">{{x.username}} : 
+                <span>{{x.message}}</span><br><br>
+                <span id = "time" > {{x.date | date: 'medium'}}</span></p>
+                    <p id="right" ng-if = "currUser == x.username">{{x.username}} : 
+                      <span>{{x.message}}</span><br><br>
+                      <span id = "time" >{{x.date | date: 'medium'}}</span></p>
+                    </div>
+                <div class = "text">
+                    <textarea rows = "2" cols = "101" placeholder = "Type message" ng-model = "message">  
+                        </textarea>
+                         <div class = "send">
+                        <button type = "submit" value = "Submit" ng-click = "sendMessage()" style=" width: 78px; padding: 8px;color:whitesmoke;background-color:rgb(0, 9, 17); font-size:15px;font-style: italic"> Send </button>
+                    </div>
+                </div>
+            </div>   
+       </div>
+    </div>
+    
+    

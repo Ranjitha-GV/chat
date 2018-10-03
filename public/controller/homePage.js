@@ -24,8 +24,9 @@ $scope.arr = arr;
 
     $scope.sendMessage = function () {
         SocketService.emit('tobackend', { "userid": id, "message": $scope.message, "date": new Date(),"username":username })
-console.log(username);
+        $scope.message = null;
     }
+   
 
     $http({
         method: 'GET',
@@ -49,5 +50,11 @@ console.log(username);
         $location.path('/login');
 
     }
+
+    $scope.move = function(username)
+    {
+        $scope.name = username;
+        $location.path('#!/home2');
+        }
 
 })
