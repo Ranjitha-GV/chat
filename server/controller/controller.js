@@ -203,7 +203,7 @@ exports.getmsgs=function(req,res){
     exports.getmsgsp=function(req,res){
         var userModel = require('../model/users3');
         var response = {};
-        userModel.find({},function(err,data){
+        userModel.find({$or:[{"senderId": req.params.senderId, "receiverId": req.params.receiverId},{"senderId": req.params.receiverId, "receiverId": req.params.senderId}]},function(err,data){
             if(data){
                 response=
                 {

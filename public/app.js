@@ -20,8 +20,8 @@ chatApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/homePage',
             templateUrl: 'template/homePage.html',
             controller: 'homecontroller'
-        })    
-        
+        })   
+       
 });
 
 
