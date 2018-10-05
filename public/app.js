@@ -21,6 +21,11 @@ chatApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'template/homePage.html',
             controller: 'homecontroller'
         })   
+        .state('home2', {
+            url: '/home2',
+            templateUrl: 'template/home2.html',
+            controller: 'singleChatCntrl'
+        })
        
 });
 

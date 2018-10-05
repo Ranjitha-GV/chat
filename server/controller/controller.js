@@ -121,8 +121,11 @@ var config = require('../config/auth.js');
                     }
                     return res.status(401).send(response);
                 }
-                else{
-                    response={
+                else
+                {
+                    console.log("working"+response);
+                    response=
+                    {
                         "error":false,
                         "message":arrList
                     }
@@ -176,52 +179,59 @@ exports.getmsgs=function(req,res){
            
         })
     }
-    exports.addtodbp=function (senderId,receiverId,senderName,receiverName,message,date) {
-        var userModel = require('../model/users3');
-        var db = new userModel();
-        var response = {};
-        db.message = message;
-        db.date = date;
-        db.senderId = senderId;
-        db.receiverId = receiverId;
-        db.senderName = senderName;
-        db.receiverName = receiverName;
-        db.save(function (err) {
+    exports.peerMessages=function(senderId,senderName,receiverId,receiverName,message,date){
+        var messageMod=require('../model/users3');
+        var msgdb=new messageMod();
+        var response={};
+        msgdb.message= message;
+        
+        msgdb.senderId=senderId;
+        msgdb.receiverId= receiverId;
+        msgdb.senderName= senderName;
+        msgdb.receiverName= receiverName;
+        msgdb.date=date;
+        // console.log(username);
+    
+        msgdb.save(function (err) {
+            
             if (err) {
                 response = {
-                    "error": true,
-                    "message": "error storing data"
-                }
+                    "Success": false,
+                    "message": "Error adding data",
+                    "err": err
+                };
+            } else {
+                response = {
+                    "Success": true,
+                    "message": "Successfully Sent"
+                };
             }
-            else {
-                response = { "error": false, "message": "succesfully added to database" }
-            }
+            console.log(response);
+            
         });
-        console.log(response)
-    
-    } 
-    exports.getmsgsp=function(req,res){
-        var userModel = require('../model/users3');
-        var response = {};
-        userModel.find({$or:[{"senderId": req.params.senderId, "receiverId": req.params.receiverId},{"senderId": req.params.receiverId, "receiverId": req.params.senderId}]},function(err,data){
-            if(data){
-                response=
-                {
-                    "error":false,
-                    "message":data
-                    
-                }
-                res.status(200).send(response);
-            }
-            else{
-                response={
-                    "error":true,
-                    "message":"something went wrong",
-                    
-                }
-                console.log(err);
-                res.status(401).send(response);
-            }
-           
-        })
     }
+     
+    exports.singleChatList= function(req,res)
+{
+    var messageMod=require('../model/users3');
+    
+    var response={};
+    var receiverId=req.params.receiverId;
+    var senderId=req.params.senderId;
+    messageMod.find({$or:[{'receiverId':receiverId,'senderId':senderId},{'senderId':receiverId,'receiverId':senderId}]}, function(err,result){
+        if (err) {
+            response = {
+                "Success": false,
+                "message": "Error fetching data"
+            };
+            return res.status(404).send(err);
+        } else {
+            response={
+                "Success": true,
+                "message": result
+            }
+           console.log("hello response"+response);
+        }
+            return res.status(200).send(response);
+    });
+}

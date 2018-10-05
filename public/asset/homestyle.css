@@ -139,7 +139,7 @@
     padding: 12px;
     margin: 10px;
     width: 50%;
-    height: 60px;
+    height: fit-content;
     font-size: 20px;
     color: white;
     float: left;

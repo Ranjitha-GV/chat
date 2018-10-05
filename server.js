@@ -28,8 +28,14 @@ client.on('tobackend',function (data) {
     io.emit('tofrontend',data)
 })
 
+client.on('singleChatBackend',function(data){
+    console.log(data.receiverId);
+    
+    users.peerMessages(data.senderId,data.senderName,data.receiverId,data.receiverName,data.message,data.date)
+    io.emit(data.receiverId,data);
 })
 
+})
 
 server.listen(4000);
 console.log("Listening to PORT 4000");
